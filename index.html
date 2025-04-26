@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 34.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 34.5: ¡El Laberinto de Bloques para la Abuela!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción amarillo, azul, rojo, blanco) y 10 iBricks por cada pareja.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Perdidos en la Ciudad de Bloques! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de laberinto y la necesidad de seguir un camino específico.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta si alguna vez han estado en un laberinto o se han perdido un poquito.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, navegantes expertos del CODE SQUAD! ¿Alguna vez han jugado en un laberinto? ¡Esos caminos que se cruzan y tienes que encontrar la salida! ¡A veces es fácil perderse! ¡Hoy, vamos a ayudar a nuestro Coding Express a no perderse en una ciudad muy especial!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que para no perderse en un laberinto, hay que planear la ruta y seguirla paso a paso.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para recorrer un laberinto sin perderse, necesitamos un plan! ¡Pensar: primero por aquí, luego giro, luego sigo recto! ¡Nuestro cerebro necesita ser un gran planificador de rutas! ¡Vamos al Gimnasio Cerebral a practicar cómo seguir caminos y no desviarnos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento de secuencias de movimientos espaciales (giros, adelante, atrás).</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, enfatizando los giros y cambios de dirección como en un laberinto.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Este baile es como un mini-laberinto! ¡Adelante, giro a la derecha, atrás, giro a la izquierda! ¡Hay que seguir las instrucciones exactas para no chocar! ¡Sigan la música y la secuencia de movimientos! ¡Así practicamos para guiar a nuestro tren!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡El Zumo para la Abuela Gnius! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🧱 Actividad 3: ¡Entrega Urgente en Block City! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia: entregar algo importante atravesando una ciudad-laberinto construida con bloques, usando el tren y señales (ladrillos).</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia de la Abuela Gnius esperando su Súper-Zumo y la ciudad laberíntica.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD, tenemos una misión súper importante! ¡La Abuela Gnius, que vive al otro lado de Block City, necesita urgentemente su Súper-Zumo de Naranja Chispeante para tener energía! ¡Nuestro Coding Express es el encargado de llevárselo! ¡Pero hay un problema!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: Block City está en construcción y parece un laberinto. Hay que construir el laberinto (con iBricks), poner las vías dentro, y usar ladrillos de acción como señales para que el tren no se pierda y llegue a casa de la Abuela.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Resulta que hoy están construyendo muchos edificios nuevos en Block City y las calles parecen un laberinto! ¡Es fácil perderse entre tantos bloques gigantes! Nuestro reto es: **Primero**, ¡usaremos nuestros iBricks para construir las calles del laberinto de Block City! **Segundo**, pondremos las vías DENTRO del laberinto para que el tren tenga un camino. **Tercero**, colocaremos ladrillos de acción como señales en puntos clave (como '¡Gira aquí!' o '¡Ya casi llegas!') para ayudar al Coding Express a navegar y entregar el zumo a tiempo a la Abuela Gnius. ¿Listos para construir y guiar?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Arquitectos de Laberintos! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para diseñar y construir el laberinto de iBricks y planificar la ruta del tren.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que diseñar laberintos y rutas es un trabajo para arquitectos ingeniosos que colaboran. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Diseñar una ciudad-laberinto y planear la ruta perfecta necesita de mentes arquitectónicas brillantes! ¡Y dos arquitectos trabajando juntos pueden crear el laberinto más divertido y la ruta más clara! ¡Formen sus Equipos de Arquitectos de Laberintos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a empezar a pensar cómo usarán sus 10 bloques para crear un camino con giros.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Arquitectos? ¡Tienen 10 bloques gigantes! Piensen... ¿cómo pueden ponerlos para crear paredes que obliguen al tren a girar? ¿Habrá una entrada y una salida (la casa de la Abuela)? ¡Empiecen a imaginar su Block City!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Construye y Señaliza el Laberinto! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🏗️ Actividad 5: ¡Dando Forma a Block City! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Construir el laberinto físico con iBricks, colocar las vías dentro siguiendo el camino y añadir ladrillos de acción como señales.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso 1: Construir el Laberinto y la Vía -->
+             <tr>
+                <td><strong>PASO 1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Construye tu Laberinto y la Vía!". Guía para que usen los iBricks para delimitar un camino simple con giros (según nivel). Luego, colocar las vías (rectas/curvas) dentro del camino creado por los bloques. Marcar la "Casa de la Abuela" al final con 2-3 bloques.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Arquitectos, a construir! Usen sus bloques para hacer las paredes de las calles de Block City. ¡Dejen un camino libre para que pase el tren! ¡Que tenga al menos una curva (K1) o dos (K2/K3)! Ahora, pongan las vías dentro de ese camino, desde la entrada hasta el final. ¡Y usen 2 o 3 bloques al final para hacer la Casa de la Abuela Gnius!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Paso 2: Colocar Señales (Ladrillos de Acción) -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Señales K1: ¡Giro y Llegada!". Laberinto forma L o U. Pide colocar 1 ladrillo AMARILLO (sonar) justo ANTES de la curva/giro, y 1 ladrillo ROJO (parar) justo antes de la Casa de la Abuela.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su ciudad tiene una curva! Para que el tren sepa que viene la curva, pongan la señal AMARILLA (¡sonido!) justo antes de empezar a girar. Y para que sepa que llegó a casa de la Abuela, pongan la señal ROJA (¡parar!) justo antes de los bloques del final. ¡Señal de giro y señal de llegada!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Señales K2: ¡Curvas y Parque!". Laberinto con dos giros. Pide colocar AMARILLO (sonar) antes del primer giro, AZUL (reversa/otra acción) antes del segundo giro (el "parque"), y ROJO (parar) antes de la Casa.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Arquitectos K2! ¡Su ciudad tiene dos giros! Señalicen el primer giro con AMARILLO (sonido). ¡En el segundo giro, imaginen que pasan por un parque! Pongan el ladrillo AZUL (¡quizás el tren saluda yendo en reversa un poquito!). Y al final, antes de la casa, la señal ROJA (parar). ¡Tres señales importantes!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Señales K3: ¡Ciudad Completa!". Laberinto más complejo. Colocar AMARILLO (sonar) antes del primer giro, BLANCO (luz) en una recta (pasando la escuela), AZUL (reversa/acción) antes del segundo giro, y ROJO (parar) al llegar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡Su Block City es más grande! Señal AMARILLA (sonido) antes del primer giro. En el camino recto después del giro, ¡pasan por la escuela! Pongan la señal BLANCA (luces). Antes del segundo giro, ¡la señal AZUL (acción especial)! Y al final, en casa de la Abuela, la señal ROJA (parar). ¡Cuatro señales para guiar al tren!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Entregando el Zumo! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-laberinto')">
+        <div class="title">🚀 Actividad 6: ¡El Coding Express Navega el Laberinto! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el tren a través del laberinto construido y observar si sigue la ruta y reacciona correctamente a las señales (ladrillos de acción).</div>
+    </div>
+    <div id="probando-laberinto" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Entrega K1 Exitosa!". Guía para poner el tren al inicio del laberinto y empujarlo. Observar si suena antes del giro y para al final. Celebrar la entrega.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Pongan el Coding Express con el Súper-Zumo en la entrada de Block City! ¡Empujón! Miren... ¿Sonó antes de girar? ¡Pip-pip! ¡Bien! ¿Siguió el camino? ¿Y paró justo en la casa de la Abuela Gnius? ¡ALTO! ¡Sí! ¡Entrega realizada! ¡La abuela está feliz!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Entrega K2 Superada!". Guía para probar el tren. Observar si suena en el primer giro, hace la acción azul en el segundo (parque), y para al final. Comentar la secuencia de señales.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Arquitectos K2! ¡Es la hora de la entrega! ¡Tren al inicio! ¡Empujón! Veamos... ¿Señal sonora (amarillo) en el primer giro? ¡Pip-pip! ¿Acción especial (azul) en el parque/segundo giro? ¡Wow! ¿Y parada (rojo) en casa de la Abuela? ¡ALTO! ¡Perfecto! ¡El tren siguió todas las señales!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Entrega K3 Completa!". Guía para probar el tren. Observar si realiza las 4 acciones (amarillo, blanco, azul, rojo) en los puntos correctos mientras navega el laberinto. Felicitar por la navegación compleja.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡La prueba final de navegación! ¡Tren listo con el zumo! ¡Empujón! Observen atentamente... ¿Sonido (amarillo) en el giro? ¿Luces (blanco) en la escuela? ¿Acción (azul) en el segundo giro? ¿Y parada final (rojo) en casa de la Abuela? ¡Sí, sí, sí y sí! ¡Han guiado al tren a través de la ciudad-laberinto más compleja! ¡La Abuela Gnius ya tiene su Súper-Zumo!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Ciudad Navegada, Misión Cumplida! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito en la construcción y navegación del laberinto, reforzar la secuenciación y el uso de señales (ladrillos) como guía.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por la entrega exitosa. Realiza preguntas sobre la construcción y las señales.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡LO HICIERON, CODE SQUAD! ¡Han sido unos arquitectos y navegantes increíbles! ¡Construyeron Block City y guiaron al Coding Express a través del laberinto para entregar el Súper-Zumo a la Abuela Gnius! ¡Misión súper cumplida! Pensemos en esta aventura urbana:
+1. ¿Qué usamos para construir las calles del laberinto? (¡Los bloques gigantes!)
+2. ¿Cómo ayudamos al tren a saber por dónde ir o qué hacer en ciertos puntos? (¡Con las señales! ¡Los ladrillos de acción!)
+3. ¿Tuvimos que poner las vías y las señales en un orden específico para llegar a la casa de la Abuela? (¡Sí!)
+¡Hoy hemos creado nuestro propio juego de laberinto! ¡Construimos el camino y pusimos señales para guiar a nuestro tren! ¡Aprendimos a planificar una ruta y a usar códigos (ladrillos) para dar instrucciones en el camino! ¡Son expertos en navegación! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
